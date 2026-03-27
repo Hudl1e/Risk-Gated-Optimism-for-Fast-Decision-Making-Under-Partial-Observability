@@ -53,7 +53,7 @@ All code is in the main notebook. Here's a guide to each function/class:
 
 | Component | What it does |
 |---|---|
-| `rl_shaped_reward()` | Returns shaped reward based on true BG. Target zone [90, 150] gives max reward (+4.0). Asymmetric: hypo penalties are 10-40× stronger than hyper penalties at equivalent distance from target. |
+| `rl_shaped_reward()` | Returns shaped reward based on true BG. Target zone [100, 160] gives max reward (+4.0). Asymmetric: hypo penalties are 10-40× stronger than hyper penalties at equivalent distance from target. |
 | Anti-stacking modifier | Penalizes bolusing when BG < 110: `reward -= 5.0 × bolus`. |
 | Correction bonus | Rewards bolusing when BG > 180: up to `+15 × bolus` at BG > 250. Teaches the agent that insulin is the correct response to highs. |
 | Surrogate reward | `r̃ = R_env - λ × ρ̂(a)` where λ=0.99. Used for Q-learning. Penalizes transitions through high-risk states. |
